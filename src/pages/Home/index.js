@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { MdFlightTakeoff } from 'react-icons/md'
 
 import api from '../../services/api';
+import './style.css';
 
 export default function Home() {
   const [trips, setTrips] = useState([]);
