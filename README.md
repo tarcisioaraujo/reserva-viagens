@@ -10,38 +10,35 @@ Uma aplicação para reserva de viagens com quantidade podendo ser alterada pelo
 	<a href="#computer-tecnologias">Tecnologias</a> •	
 	<a href="#white_check_mark-features">Features</a> •
 	<a href="#runner-começando">Começando</a> •
-	<a href="#warning-pré-requisitos">Pré-requisitos</a> •
-	<a href="#elephant-configuração-do-php">Configuração do php</a> •
-	<a href="#hammer_and_wrench-instalação">Instalação</a> •
-	<a href="#passport_control-login">Login</a> •
+	<a href="#warning-pré-requisitos">Pré-requisitos</a> •	
+	<a href="#hammer_and_wrench-instalação">Instalação</a> •	
 	<a href="#construction_worker-autor">Autor</a> •
 	<a href="#memo-licença">Licença</a>
 </p>
 
 <p align="center">
 	<kbd>
-		<img alt="Login" title="#Login" width="600" height="333" style="border-radius: 5px" src="./assets/login.gif">
+		<img alt="Viagens" title="#Viagens" width="600" height="266" style="border-radius: 5px" src="./assets/lista_viagens.png">
 	</kbd>
 	<br/><br/>
 	<kbd>
-		<img alt="Criando Artigo" title="#CriandoArtigo" width="600" height="333" style="border-radius: 5px" src="./assets/criando_artigo.gif">
+		<img alt="Reservas" title="#Reservas" width="600" height="331" style="border-radius: 5px" src="./assets/lista_reservas.png">
 	</kbd>		
 </p>
 
 ## :computer: Tecnologias 
 
-- [Vue.js](https://br.vuejs.org/)
-- [Laravel](https://laravel.com/)
-- [PHP](https://www.php.net/)
-- [Bootstrap](https://getbootstrap.com/)
+- [React](https://pt-br.reactjs.org/)
+- [Immer](https://immerjs.github.io/immer/)
+- [Redux](https://redux.js.org/)
+- [Redux-Saga](https://redux-saga.js.org/)
 
 ## :white_check_mark: Features
 
-- [x] Cadastro de artigos
-- [x] Cadastro de usuários
-- [x] Cadastro de autores
-- [x] Cadastro de administradores
-- [ ] Upload de imagem ilustrativa no artigo;
+- [x] Lista de Viagens
+- [x] Lista de Reservas
+- [x] Exclusão de reserva
+- [x] Alteração da quantidade de reservas
 
 ## :runner: Começando 
 
@@ -52,18 +49,7 @@ Essas instruções fornecerão uma cópia do projeto instalado e funcionando em 
 O que você precisar para instalar a aplicação
 
 ```
-PHP 7.1.8 - 7.4.16
-Composer >= 1.4.2
-Node >= 8.6.0
-```
-### :elephant: Configuração do php 
-
-```
-# Habilitar os recursos no php.ini
-extension=mbstring
-extension=openssl
-extension=pdo_sqlite
-extension_dir = "ext"
+Node >= 10.15.0
 ```
 
 ## :hammer_and_wrench: Instalação
@@ -72,50 +58,25 @@ Passos para rodar a aplicação
 
 ```
 # Clonar
-git clone https://github.com/tarcisioaraujo/blog-laravel-vue.git
+git clone https://github.com/tarcisioaraujo/reserva-viagens.git
 
 # Acessar o diretório
-cd blog-laravel-vue
+cd reserva-viagens
 
-# Instalar e atualizar as dependências do Composer (leva alguns minutos ☕)
-composer install
-composer update
-
-# Instalar as dependências do Node JS
+# Instalar as dependências do Node JS (leva alguns minutos ☕)
 npm install
 
-# Configurar variáveis de ambiente
-cp .env.example .env
-php artisan key:generate
+# Rodar servidor React
+npm start
 
-# Alterar o arquivo .env para ficar dessa forma
-DB_CONNECTION=sqlite
-//DB_HOST=127.0.0.1
-//DB_PORT=3306
-//DB_DATABASE=homestead
-//DB_USERNAME=homestead
-//DB_PASSWORD=secret
+# Instalar o simulador de API
+npm install -g json-server
 
-# Criar arquivo do banco de dados SQLite
-copy con .\database\database.sqlite
-<aperte a tecla F6>
-
-# Criar tabelas do Banco de Dados
-php artisan migrate
-
-# Rodar Servidor PHP
-php artisan serve
+# Rodar o simulador de API
+json-server server.json -p 3333
 
 # Acessar o endereço 
-http://localhost:8000
-```
-## :passport_control: Login 
-
-Usuário de teste
-
-```
-E-mail: admin@mail.com
-Password: 123456
+http://localhost:3000/
 ```
 
 ## :construction_worker: Autor
