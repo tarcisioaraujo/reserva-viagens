@@ -6,7 +6,7 @@ import { addReserveRequest } from '../../store/modules/reserve/actions';
 import api from '../../services/api';
 import './style.css';
 
-export default function Home() {
+export default function Home({ history }) {
   const dispatch = useDispatch(); 
   const [trips, setTrips] = useState([]);
 

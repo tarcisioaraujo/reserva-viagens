@@ -1,6 +1,7 @@
 import { call, put, all, takeLatest, select } from 'redux-saga/effects';
 import { addReserveSuccess, updateAmountSuccess } from './actions';
 import api from '../../../services/api';
+import history from '../../../services/history';
 
 function* addToReserve({ id }) {
     const tripExists = yield select(
@@ -14,6 +15,7 @@ function* addToReserve({ id }) {
 
     if (amount > stockAmount) {
         alert('Não há mais vagas');
+        return;
     }
 
     if (tripExists) {
@@ -26,8 +28,9 @@ function* addToReserve({ id }) {
             amount: 1,
         }
 
-        yield put(addReserveSuccess(data))
-    }    
+        yield put(addReserveSuccess(data));
+    }
+    history.push('/reservas');
 }
 
 function* updateAmount({ id, amount }) {
@@ -41,7 +44,7 @@ function* updateAmount({ id, amount }) {
         return;
     }
 
-    yield put(updateAmountSuccess(id, amount));
+    yield put(updateAmountSuccess(id, amount));   
     
 }
 
