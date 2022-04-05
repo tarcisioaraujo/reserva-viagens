@@ -1,70 +1,135 @@
-# Getting Started with Create React App
+<h1 align="center">Reserva Viagens</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Uma aplicação para reserva de viagens com quantidade podendo ser alterada pelo usuário diretamente na sua lista de reservas.
 
-## Available Scripts
+<p align="center">		
+	<img src="https://img.shields.io/github/license/tarcisioaraujo/blog-laravel-vue" alt="License">	 
+</p>
 
-In the project directory, you can run:
+<p align="center">
+	<a href="#computer-tecnologias">Tecnologias</a> •	
+	<a href="#white_check_mark-features">Features</a> •
+	<a href="#runner-começando">Começando</a> •
+	<a href="#warning-pré-requisitos">Pré-requisitos</a> •
+	<a href="#elephant-configuração-do-php">Configuração do php</a> •
+	<a href="#hammer_and_wrench-instalação">Instalação</a> •
+	<a href="#passport_control-login">Login</a> •
+	<a href="#construction_worker-autor">Autor</a> •
+	<a href="#memo-licença">Licença</a>
+</p>
 
-### `npm start`
+<p align="center">
+	<kbd>
+		<img alt="Login" title="#Login" width="600" height="333" style="border-radius: 5px" src="./assets/login.gif">
+	</kbd>
+	<br/><br/>
+	<kbd>
+		<img alt="Criando Artigo" title="#CriandoArtigo" width="600" height="333" style="border-radius: 5px" src="./assets/criando_artigo.gif">
+	</kbd>		
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## :computer: Tecnologias 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Vue.js](https://br.vuejs.org/)
+- [Laravel](https://laravel.com/)
+- [PHP](https://www.php.net/)
+- [Bootstrap](https://getbootstrap.com/)
 
-### `npm test`
+## :white_check_mark: Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] Cadastro de artigos
+- [x] Cadastro de usuários
+- [x] Cadastro de autores
+- [x] Cadastro de administradores
+- [ ] Upload de imagem ilustrativa no artigo;
 
-### `npm run build`
+## :runner: Começando 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Essas instruções fornecerão uma cópia do projeto instalado e funcionando em sua máquina local.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## :warning: Pré-requisitos 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+O que você precisar para instalar a aplicação
 
-### `npm run eject`
+```
+PHP 7.1.8 - 7.4.16
+Composer >= 1.4.2
+Node >= 8.6.0
+```
+### :elephant: Configuração do php 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+# Habilitar os recursos no php.ini
+extension=mbstring
+extension=openssl
+extension=pdo_sqlite
+extension_dir = "ext"
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## :hammer_and_wrench: Instalação
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Passos para rodar a aplicação
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+# Clonar
+git clone https://github.com/tarcisioaraujo/blog-laravel-vue.git
 
-## Learn More
+# Acessar o diretório
+cd blog-laravel-vue
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Instalar e atualizar as dependências do Composer (leva alguns minutos ☕)
+composer install
+composer update
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Instalar as dependências do Node JS
+npm install
 
-### Code Splitting
+# Configurar variáveis de ambiente
+cp .env.example .env
+php artisan key:generate
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Alterar o arquivo .env para ficar dessa forma
+DB_CONNECTION=sqlite
+//DB_HOST=127.0.0.1
+//DB_PORT=3306
+//DB_DATABASE=homestead
+//DB_USERNAME=homestead
+//DB_PASSWORD=secret
 
-### Analyzing the Bundle Size
+# Criar arquivo do banco de dados SQLite
+copy con .\database\database.sqlite
+<aperte a tecla F6>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Criar tabelas do Banco de Dados
+php artisan migrate
 
-### Making a Progressive Web App
+# Rodar Servidor PHP
+php artisan serve
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Acessar o endereço 
+http://localhost:8000
+```
+## :passport_control: Login 
 
-### Advanced Configuration
+Usuário de teste
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+E-mail: admin@mail.com
+Password: 123456
+```
 
-### Deployment
+## :construction_worker: Autor
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<a href="https://github.com/tarcisioaraujo">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/47223046?v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Tarcísio Silva de Araújo</b></sub></a> <a href="https://github.com/tarcisioaraujo" title="GitHub"></a>
 
-### `npm run build` fails to minify
+Feito por Tarcísio Silva de Araújo 👋
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[![Linkedin Badge](https://img.shields.io/badge/-Tarcísio-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tarcisiosaraujo/)](https://www.linkedin.com/in/tarcisiosaraujo/) 
+[![Gmail Badge](https://img.shields.io/badge/-tarcisio.saraujo@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tarcisio.saraujo@gmail.com)](mailto:tarcisio.saraujo@gmail.com)
+
+## :memo: Licença
+
+Este projeto esta sobe a licença [MIT](./LICENSE).
